@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools">
+
+
+    <TextView
+            android:id="@+id/tvCouponNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Номер Талона"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/tvAdress"
+            android:layout_marginEnd="8dp"/>
+
+    <TextView
+            android:id="@+id/tvTime"
+            tools:text="Время"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@+id/tvDoctor"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+
+    <TextView
+            android:id="@+id/tvDoctor"
+            tools:text="Доктор"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
+
+    <TextView
+            android:id="@+id/tvDirection"
+            tools:text="Направление"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="parent" android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toTopOf="@+id/tvDoctor" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvTime" android:layout_marginEnd="8dp"/>
+
+    <TextView
+            android:id="@+id/tvAdress"
+            tools:text="Адресс"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@+id/tvCouponNumber"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"/>
+</android.support.constraint.ConstraintLayout>
