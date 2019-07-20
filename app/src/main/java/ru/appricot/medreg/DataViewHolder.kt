@@ -11,8 +11,7 @@ class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val couponNumber: TextView = itemView.findViewById(R.id.tvCouponNumber)
     val time: TextView = itemView.findViewById(R.id.tvTime)
     val direction: TextView = itemView.findViewById(R.id.tvDirection)
-    val doctor: TextView = itemView.findViewById(R.id.tvDoctor)
-    val adress: TextView = itemView.findViewById(R.id.tvAdress)
+    val doctor: TextView = itemView.findViewById(R.id.tvDate)
 
     fun bind(position: Int, clickListener: OnCouponClickListener, couponList: ArrayList<Coupon>) {
         itemView.setOnClickListener { clickListener.onCouponClickListener(it, position, couponList) }

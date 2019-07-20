@@ -8,5 +8,5 @@ class Coupon : Serializable {
     var direction = ""
     var time = ""
     var doctor = ""
-    var adress =""
+    var date = ""
 }

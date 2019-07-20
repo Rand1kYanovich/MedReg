@@ -1,6 +1,7 @@
 package ru.appricot.medreg
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,9 +25,9 @@ class DataAdapter constructor(private var couponList: ArrayList<Coupon>) : Recyc
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         val coupon:Coupon = couponList[position]
         holder.couponNumber.text = coupon.couponNumber
-        holder.adress.text = coupon.adress
         holder.direction.text = coupon.direction
         holder.doctor.text = coupon.doctor
+        Log.e("hi",coupon.date)
         holder.time.text = coupon.time
 
         holder.bind(position,listener,couponList)
