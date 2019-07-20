@@ -9,18 +9,27 @@ import android.widget.Button
 import android.widget.EditText
 import ru.appricot.medreg.listeners.OnCouponClickListener
 import ru.appricot.medreg.model.entity.Coupon
+import ru.appricot.medreg.model.firebase.FirebaseRepository
 import ru.appricot.medreg.util.FirebaseUtil
 import ru.appricot.medreg.util.FragmentUtil
+import ru.appricot.medreg.util.SharedUtil
 
 class RegistrationViewModel : ViewModel() {
 
     var couponList = MutableLiveData<ArrayList<Coupon>>()
 
+
+    fun getFirstData():LiveData<ArrayList<Coupon>>{
+        if(couponList.value == null){
+            couponList = FirebaseRepository.newInstance().getData()
+        }
+        return couponList
+    }
+
     fun setRegistrationClickListener(etPassword: EditText, etPhoneNumber: EditText) {
 
         val password = etPassword.text.toString()
-        FirebaseUtil.phoneNumber = etPhoneNumber.text.toString()
-        Log.e("nub",FirebaseUtil.phoneNumber)
+        SharedUtil.setUser(etPhoneNumber.text.toString())
         FirebaseUtil.setPhoneNumber()
         FirebaseUtil.setPassword(password)
     }
@@ -34,10 +43,4 @@ class RegistrationViewModel : ViewModel() {
         FirebaseUtil.setName(name,family,patronymic)
     }
 
-
-
-    fun getData():LiveData<ArrayList<Coupon>>{
-
-        return couponList
-    }
 }

@@ -1,28 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+    <TextView android:layout_width="226dp"
+              android:layout_height="41dp"
+              app:layout_constraintEnd_toEndOf="parent"
+              android:gravity="center"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              android:text="Регистрация"
+              android:layout_marginTop="144dp"
+              style="@style/textStyle"
+              android:id="@+id/textView"/>
+
+
     <EditText
             android:id="@+id/etPhoneNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="80dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent"
-            android:hint="Номер телефона"/>
+            android:layout_width="268dp"
+            android:layout_height="43dp"
+            android:background="@drawable/edit_text_styles"
+            android:hint="Номер телефона"
+            android:paddingLeft="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="68dp"
+            android:elevation="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView"/>
 
     <EditText
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="80dp"
-            app:layout_constraintTop_toTopOf="parent"
-            android:hint="Password"
-            android:id="@+id/etPassword"/>
+            android:layout_width="268dp"
+            android:layout_height="43dp"
+            android:background="@drawable/edit_text_styles"
+            android:hint="Пароль"
+            android:paddingLeft="22dp"
+            android:id="@+id/etPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15dp"
+            android:elevation="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/etPhoneNumber"/>
+
+
 
     <Button
             android:id="@+id/btnSubmit"
@@ -32,6 +54,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:text="Submit"
+            android:background="@drawable/btn_styles"
+            style="@style/btn_text"
+            android:elevation="20dp"
             app:layout_constraintTop_toBottomOf="@+id/etPassword"/>
 
 </android.support.constraint.ConstraintLayout>

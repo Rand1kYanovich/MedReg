@@ -7,6 +7,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import ru.appricot.medreg.model.entity.Coupon
 import ru.appricot.medreg.util.FirebaseUtil
+import ru.appricot.medreg.util.SharedUtil
 
 class FirebaseRepository {
 
@@ -18,7 +19,7 @@ class FirebaseRepository {
 
     fun getData(): MutableLiveData<ArrayList<Coupon>> {
         val list = ArrayList<Coupon>()
-        FirebaseDatabase.getInstance().reference.child(FirebaseUtil.phoneNumber).child("coupons")
+        FirebaseDatabase.getInstance().reference.child(SharedUtil.getUser()).child("coupons")
             .addChildEventListener(object : ChildEventListener {
                 override fun onCancelled(p0: DatabaseError) {}
 
