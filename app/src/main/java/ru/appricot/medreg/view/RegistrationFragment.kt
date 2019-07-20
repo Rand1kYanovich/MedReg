@@ -15,6 +15,10 @@ import ru.appricot.medreg.viewmodel.RegistrationViewModel
 
 class RegistrationFragment: Fragment() {
 
+    companion object{
+        fun newInstance()=RegistrationFragment()
+    }
+
     private val viewModel:RegistrationViewModel by lazy {
         ViewModelProviders.of(activity!!).get(RegistrationViewModel::class.java)
     }

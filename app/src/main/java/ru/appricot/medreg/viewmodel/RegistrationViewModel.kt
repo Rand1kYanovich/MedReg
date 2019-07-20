@@ -3,6 +3,7 @@ package ru.appricot.medreg.viewmodel
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -19,7 +20,7 @@ class RegistrationViewModel : ViewModel() {
 
         val password = etPassword.text.toString()
         FirebaseUtil.phoneNumber = etPhoneNumber.text.toString()
-
+        Log.e("nub",FirebaseUtil.phoneNumber)
         FirebaseUtil.setPhoneNumber()
         FirebaseUtil.setPassword(password)
     }
