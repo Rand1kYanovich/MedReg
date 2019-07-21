@@ -1,7 +1,7 @@
 package ru.appricot.medreg
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.FirebaseDatabase
 import ru.appricot.medreg.util.FragmentUtil

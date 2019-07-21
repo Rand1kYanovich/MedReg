@@ -1,14 +1,14 @@
 package ru.appricot.medreg.view
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ru.appricot.medreg.R
 import ru.appricot.medreg.model.entity.Coupon
 
-class FullCouponFragment:Fragment() {
+class FullCouponFragment: Fragment() {
 
     companion object{
         fun newInstance(key:String,coupon:Coupon):FullCouponFragment{

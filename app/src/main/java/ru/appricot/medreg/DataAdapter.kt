@@ -1,7 +1,7 @@
 package ru.appricot.medreg
 
 import android.opengl.Visibility
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import ru.appricot.medreg.listeners.OnCouponClickListener
 import ru.appricot.medreg.model.entity.Coupon
 
-class DataAdapter constructor(private var couponList: ArrayList<Coupon>) : RecyclerView.Adapter<DataViewHolder>() {
+class DataAdapter constructor(private var couponList: ArrayList<Coupon>) : androidx.recyclerview.widget.RecyclerView.Adapter<DataViewHolder>() {
 
     private lateinit var listener:OnCouponClickListener
 
