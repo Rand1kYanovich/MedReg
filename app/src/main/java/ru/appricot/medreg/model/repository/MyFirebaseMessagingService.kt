@@ -14,6 +14,7 @@ import android.graphics.Color
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.RemoteMessage
+import ru.appricot.medreg.R
 import java.util.*
 
 
@@ -53,6 +54,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             .setDefaults(Notification.DEFAULT_ALL)
             .setWhen(System.currentTimeMillis())
             .setContentTitle(message!!.title)
+            .setSmallIcon(R.drawable.ic_bell)
             .setContentText(message.body)
             .setContentInfo("Info")
 

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -33,7 +34,7 @@ class CouponFragment : Fragment() {
         val rootView: View = inflater.inflate(R.layout.coupon_fragment, container, false)
         val couponList = viewModel.getFirstData()
 
-        val btnAdd: Button = rootView.findViewById(R.id.btnAdd)
+        val btnAdd: ImageButton = rootView.findViewById(R.id.btnAdd)
         btnAdd.setOnClickListener {
             FragmentUtil.replace(activity!!.supportFragmentManager, R.id.content, AddCouponFragment.newInstance())
         }

@@ -13,14 +13,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        FirebaseApp.initializeApp(this);
+        FirebaseApp.initializeApp(this)
         SharedUtil.init()
         setContentView(R.layout.activity_main)
-        if (SharedUtil.getUser() == "")
             FragmentUtil.replace(supportFragmentManager, R.id.content, RegistrationFragment.newInstance())
-        else {
-            FragmentUtil.replace(supportFragmentManager, R.id.content, CouponFragment.newInstance())
-        }
+
     }
 
     override fun onDestroy() {

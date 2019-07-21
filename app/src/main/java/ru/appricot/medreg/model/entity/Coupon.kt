@@ -9,5 +9,5 @@ class Coupon : Serializable {
     var time = ""
     var doctor = ""
     var date = ""
-    var isOpen = true
+    var isOpen = false
 }

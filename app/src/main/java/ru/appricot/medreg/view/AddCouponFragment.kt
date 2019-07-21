@@ -43,13 +43,16 @@ class AddCouponFragment : Fragment() {
         val spinnerDoctor: Spinner = rootView.findViewById(R.id.spinnerDoctor)
         val spinnerDirection: Spinner = rootView.findViewById(R.id.spinnerDirection)
         val calendarView: CalendarView = rootView.findViewById(R.id.calendarView)
-        val btnSubmit: Button = rootView.findViewById(R.id.btnSubmit)
+        val btnYellow: Button = rootView.findViewById(R.id.btnYellow)
+        val btnBlue: Button = rootView.findViewById(R.id.btnBlue)
 
-        btnSubmit.setOnClickListener {
+
+        btnYellow.setOnClickListener {
             val coupon = Coupon()
             coupon.doctor = doctor
             coupon.direction = direction
-            coupon.time = time
+            coupon.time = btnYellow.text.toString()
+            Log.e("HI",coupon.time)
             coupon.date = date
             coupon.couponNumber = RandomUtil.getRandomNumber()
             FirebaseUtil.setCoupon(coupon)
@@ -58,16 +61,29 @@ class AddCouponFragment : Fragment() {
             viewModelRegistration.addCoupon(coupon)
         }
 
+        btnBlue.setOnClickListener {
+            val coupon = Coupon()
+            coupon.doctor = doctor
+            coupon.direction = direction
+            coupon.time = btnBlue.text.toString()
+            coupon.date = date
+            coupon.couponNumber = RandomUtil.getRandomNumber()
+            FirebaseUtil.setCoupon(coupon)
+            Log.e("Coupon",coupon.toString())
+            FragmentUtil.replace(activity!!.supportFragmentManager,R.id.content,CouponFragment.newInstance())
+            viewModelRegistration.addCoupon(coupon)
+        }
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            val day = dayOfMonth+1
-            date = "$year|$month|$day"
+            val yearE = year +1
+            date = "$yearE|$month|$dayOfMonth"
             Log.e("Date",date)
         }
 
         val arrayDirections = viewModelCoupon.getDirectionArray()
         arrayDirections.observe(viewLifecycleOwner, Observer {
             val adapterDirection =
-                ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, arrayDirections.value!!)
+                ArrayAdapter<String>(context!!, R.layout.simple_spinner_item, arrayDirections.value!!)
+            adapterDirection.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
             spinnerDirection.adapter = adapterDirection
             Log.e("Fuck","Shit")
 
@@ -85,7 +101,8 @@ class AddCouponFragment : Fragment() {
 
                 arrayDoctors.observe(viewLifecycleOwner, Observer {
                     val adapterDoctors =
-                        ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, arrayDoctors.value!!)
+                        ArrayAdapter<String>(context!!, R.layout.simple_spinner_item, arrayDoctors.value!!)
+                    adapterDoctors.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
                     spinnerDoctor.adapter = adapterDoctors
                     spinnerDoctor.onItemSelectedListener = object:AdapterView.OnItemSelectedListener{
                         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
