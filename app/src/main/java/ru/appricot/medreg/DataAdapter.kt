@@ -1,5 +1,6 @@
 package ru.appricot.medreg
 
+import android.opengl.Visibility
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -24,11 +25,17 @@ class DataAdapter constructor(private var couponList: ArrayList<Coupon>) : Recyc
 
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         val coupon:Coupon = couponList[position]
-        holder.couponNumber.text = coupon.couponNumber
         holder.direction.text = coupon.direction
-        holder.doctor.text = coupon.doctor
-        Log.e("hi",coupon.date)
         holder.time.text = coupon.time
+        holder.couponNumber.text = coupon.couponNumber
+        holder.doctor.text = coupon.doctor
+        if(coupon.isOpen){
+            
+        }
+        else{
+
+        }
+        Log.e("hi",coupon.date)
 
         holder.bind(position,listener,couponList)
     }
