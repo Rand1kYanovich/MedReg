@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "880370827521",
+    "firebase_url": "https://medreg-da0ea.firebaseio.com",
+    "project_id": "medreg-da0ea",
+    "storage_bucket": "medreg-da0ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880370827521:android:164eb226c4407319",
+        "android_client_info": {
+          "package_name": "ru.appricot.medreg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880370827521-mldeksao0im8hcp6ecggs9rnbblcln3c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ru.appricot.medreg",
+            "certificate_hash": "bc8b7771092dc4a990d9351bd6d58f99b31bf1fd"
+          }
+        },
+        {
+          "client_id": "880370827521-ek9pfh394fjqs2tk6it91dpr7g3jqqnb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPPOn6D6KdA3GQx9auB52Gs7rbhZNXxuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880370827521-ek9pfh394fjqs2tk6it91dpr7g3jqqnb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

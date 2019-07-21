@@ -43,10 +43,10 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/tvDate"
-            android:layout_marginTop="8dp"
             android:layout_marginStart="30dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvCouponNumber"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
             android:id="@+id/tvDate"
@@ -58,6 +58,7 @@
             android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
+            android:id="@+id/tvStore"
             android:layout_width="52dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -69,13 +70,15 @@
             app:layout_constraintTop_toBottomOf="@+id/tvDate" app:layout_constraintStart_toStartOf="parent"
           />
     <TextView
-            android:layout_width="230dp"
-            android:layout_height="58dp"
+            android:id="@+id/tvWaitTalone"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
             android:textColor="#000000"
-            android:textSize="25sp"
-            android:text="В ожидании талона"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/tvDate"
-            android:layout_marginStart="54dp"
+            android:textSize="20sp"
             android:visibility="gone"
-            android:layout_marginTop="20dp" app:layout_constraintTop_toTopOf="parent"/>
+            android:text="В ожидании талона"
+            app:layout_constraintStart_toEndOf="@+id/tvDate"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="parent"/>
 </android.support.constraint.ConstraintLayout>

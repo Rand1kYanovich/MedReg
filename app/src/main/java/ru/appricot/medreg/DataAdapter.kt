@@ -26,17 +26,23 @@ class DataAdapter constructor(private var couponList: ArrayList<Coupon>) : Recyc
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         val coupon:Coupon = couponList[position]
         holder.direction.text = coupon.direction
+        Log.e("DIrection",coupon.direction)
         holder.time.text = coupon.time
-        holder.couponNumber.text = coupon.couponNumber
-        holder.doctor.text = coupon.doctor
+        var date = coupon.date
+        date = date.split('|')[2]
+        holder.date.text = date
+
         if(coupon.isOpen){
-            
+            holder.couponNumber.text = coupon.couponNumber
+            holder.waitTalone.visibility = View.GONE
+            holder.store.text = "NEW"
         }
         else{
 
+            holder.couponNumber.visibility = View.GONE
+            holder.waitTalone.visibility = View.VISIBLE
+            holder.store.text = "WAIT"
         }
-        Log.e("hi",coupon.date)
-
         holder.bind(position,listener,couponList)
     }
 

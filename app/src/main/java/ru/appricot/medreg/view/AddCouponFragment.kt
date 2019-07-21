@@ -69,6 +69,7 @@ class AddCouponFragment : Fragment() {
             val adapterDirection =
                 ArrayAdapter<String>(context!!, android.R.layout.simple_spinner_item, arrayDirections.value!!)
             spinnerDirection.adapter = adapterDirection
+            Log.e("Fuck","Shit")
 
         })
 

@@ -3,10 +3,8 @@ package ru.appricot.medreg.viewmodel
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import com.google.firebase.database.ChildEventListener
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
+import android.util.Log
+import com.google.firebase.database.*
 
 class CouponViewModel:ViewModel() {
 

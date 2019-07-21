@@ -6,7 +6,7 @@ class RandomUtil {
     companion object {
         fun getRandomNumber(): String {
             var number = ""
-            for (i in 0..32) {
+            for (i in 0..2) {
                 number += (Math.random() * 10).toInt()
             }
             return number
